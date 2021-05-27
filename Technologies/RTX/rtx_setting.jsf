@@ -1,0 +1,43 @@
+<rombe
+
+	<rtx:on
+		<set:texture:RTXSetting:On>
+		<set:Fixiks:RTXSetting:On>
+		<set:Shadow:RTXSetting:On>
+		<set:Beams:RTXSetting:On>
+		<set:Details:RTXSetting:On>
+		<set:Depths:RTXSetting:On>
+		<set:Particles:RTXSetting:On>
+	/>
+
+	<rtx:off
+		<set:texture:RTXSetting:Off>
+		<set:Fixiks:RTXSetting:Off>
+		<set:Shadow:RTXSetting:Off>
+		<set:Beams:RTXSetting:Off>
+		<set:Details:RTXSetting:Off>
+		<set:Depths:RTXSetting:Off>
+		<set:Particles:RTXSetting:Off>
+	/>
+
+	<rtx:amd_error
+		<set:rtx:off
+			<set:texture:RTXSetting:Off>
+			<set:Fixiks:RTXSetting:Off>
+			<set:Shadow:RTXSetting:Off>
+			<set:Beams:RTXSetting:Off>
+			<set:Details:RTXSetting:Off>
+			<set:Depths:RTXSetting:Off>
+			<set:Particles:RTXSetting:Off>
+											/>
+	<set:rtx:radeon_fidelityfx_on
+			<set:texture:RTXSetting:Off> //AMD Performance breaks down badly //
+			<set:Fixiks:RTXSetting:On>
+			<set:Shadow:RTXSetting:Off> //AMD Performance breaks down badly //
+			<set:Beams:RTXSetting:On>
+			<set:Details:RTXSetting:On>
+			<set:Depths:RTXSetting:On> //AMD Performance will probably sit out //
+			<set:Particles:RTXSetting:Off> //AMD Performance breaks down badly //
+											/>
+	/>
+/>

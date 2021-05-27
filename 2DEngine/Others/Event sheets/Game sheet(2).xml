@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Game sheet</name>
+    <events>
+        <event-block sid="2360724028849012">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="8049961512695476" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="6974693059282718" type="jewelGrey">
+                    <param id="0" name="X">mouse.X</param>
+                    <param id="1" name="Y">mouse.Y</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="7495633167982824">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="2195638400081732" type="mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">bgWhite</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="2567785793846813" type="System">
+                    <param id="0" name="Object to create">jewelGreen</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">mouse.X</param>
+                    <param id="3" name="Y">mouse.Y</param>
+                </action>
+                <action behavior="Physics" id="27" name="Set enabled" sid="8022808669978359" type="jewelGreen">
+                    <param id="0" name="Mode">1</param>
+                </action>
+                <action id="5" name="Set frame" sid="1269336091126971" type="jewelGreen">
+                    <param id="0" name="Frame number">jewelGrey.AnimationFrame</param>
+                </action>
+                <action id="5" name="Set frame" sid="2172370808082313" type="jewelGrey">
+                    <param id="0" name="Frame number">random(4)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="407793711007077">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="5300909458579805" type="jewelGreen">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">WindowHeight</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="7909985029330171" type="System" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

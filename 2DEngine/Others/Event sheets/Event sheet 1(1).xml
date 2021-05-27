@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <event-block sid="9281504202562071">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="5315455979853225" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="5814038130518278" type="barrel">
+                    <param id="0" name="Object">tank</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+                <action id="-21" name="Rotate toward position" sid="3714365728425336" type="barrel">
+                    <param id="0" name="Degrees">10</param>
+                    <param id="1" name="X">Mouse.X</param>
+                    <param id="2" name="Y">Mouse.Y</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="7629026497040105" type="smoke">
+                    <param id="0" name="Opacity">Self.Opacity - 1</param>
+                </action>
+                <action id="-18" name="Rotate clockwise" sid="2383368287853168" type="smoke">
+                    <param id="0" name="Degrees">1</param>
+                </action>
+                <action id="-7" name="Set size" sid="1553308521305976" type="smoke">
+                    <param id="0" name="Width">Self.Width+1</param>
+                    <param id="1" name="Height">Self.Height+1</param>
+                </action>
+                <action behavior="Bullet" id="0" name="Set speed" sid="1707619704117923" type="canDown">
+                    <param id="0" name="Speed">self.Bullet.Speed*0.94</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="3845280481084814">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="5086473636921322" type="tank">
+                            <param id="0" name="Instance variable">cooldown</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="7732260882269222" type="tank">
+                            <param id="0" name="Instance variable">cooldown</param>
+                            <param id="1" name="Value">Self.cooldown - 1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="6492393080534686">
+            <conditions>
+                <condition id="2" name="Mouse button is down" sid="1754403555046101" type="mouse">
+                    <param id="0" name="Mouse button">0</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="7693776241726996" type="tank">
+                    <param id="0" name="Instance variable">cooldown</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="2483292362405715" type="System">
+                    <param id="0" name="Object to create">bullet</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">barrel.ImagePointX(1)</param>
+                    <param id="3" name="Y">barrel.ImagePointY(1)</param>
+                </action>
+                <action id="-3" name="Create object" sid="3360127180169829" type="System">
+                    <param id="0" name="Object to create">smoke</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">barrel.ImagePointX(1)</param>
+                    <param id="3" name="Y">barrel.ImagePointY(1)</param>
+                </action>
+                <action id="-8" name="Set angle" sid="1402235741334857" type="smoke">
+                    <param id="0" name="Angle">random(360)</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="7080338351904068" type="smoke">
+                    <param id="0" name="Opacity">50</param>
+                </action>
+                <action id="-22" name="Set angle toward position" sid="1499165165785843" type="bullet">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.Y</param>
+                </action>
+                <action id="-10" name="Set value" sid="4372420983285722" type="tank">
+                    <param id="0" name="Instance variable">cooldown</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1753406629882649">
+            <conditions>
+                <condition id="-10" name="Compare opacity" sid="9157489316744386" type="smoke">
+                    <param id="0" name="Comparison">3</param>
+                    <param id="1" name="Opacity">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="997391887262817" type="smoke" />
+            </actions>
+        </event-block>
+        <event-block sid="9039282698018934">
+            <conditions>
+                <condition id="-4" name="Is outside layout" sid="4379884808104563" type="bullet" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="4348181509647701" type="bullet" />
+            </actions>
+        </event-block>
+        <event-block sid="9780956717147033">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="3077113911930741" type="bullet">
+                    <param id="0" name="Object">can</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="2612618158323178" type="can" />
+                <action id="-9" name="Destroy" sid="8928207185337609" type="bullet" />
+                <action id="-3" name="Create object" sid="8492746936338494" type="System">
+                    <param id="0" name="Object to create">smoke</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">can.X</param>
+                    <param id="3" name="Y">can.Y</param>
+                </action>
+                <action id="-8" name="Set angle" sid="9266804053187288" type="smoke">
+                    <param id="0" name="Angle">random(360)</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="1567085034139601" type="smoke">
+                    <param id="0" name="Opacity">50</param>
+                </action>
+                <action id="-3" name="Create object" sid="3425659867229" type="System">
+                    <param id="0" name="Object to create">canDown</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="X">can.X</param>
+                    <param id="3" name="Y">can.Y</param>
+                </action>
+                <action id="-8" name="Set angle" sid="6375476295861921" type="canDown">
+                    <param id="0" name="Angle">bullet.Angle</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

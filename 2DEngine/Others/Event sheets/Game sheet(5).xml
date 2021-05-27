@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Game sheet</name>
+    <events>
+        <event-block sid="7491371804361805">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="9801388307075459" type="mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">Sprite4</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="9194030023789272" type="Sprite4" />
+            </actions>
+        </event-block>
+        <event-block sid="6011404263843062">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="3991022847775217" type="Sprite5">
+                    <param id="0" name="Object">TiledBackground</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="4689708014446641" type="System" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
